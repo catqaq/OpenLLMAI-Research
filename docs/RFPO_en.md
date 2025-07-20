@@ -23,7 +23,7 @@ This leads to the core idea of this work: **Recognize mistakes and correct them*
 
 ### Methods
 
-Taking GRPO as an example (the core idea applies to other RL algorithms; GRPO is chosen only because it aligns with my initial perception when first接触ing RL, emphasizing "trying more").
+Taking GRPO as an example (the core idea applies to other RL algorithms; GRPO is chosen only because it aligns with my initial perception when first encountering RL, emphasizing "trying more").
 
 We know that GRPO calculates relative advantages and works well when there are both positive and negative values in the group. But what if all rewards in the group are the same? The answer is that GRPO will fail. For all 1s, it's not a big problem, but for all 0s, it's a serious issue. All 0s represent a severe error situation, but GRPO will not generate any reward (ignoring KL), which is equivalent to skipping the difficult samples with all 0s. Is this reasonable? Obviously not.
 
